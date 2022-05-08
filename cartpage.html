@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <link rel="icon" type="image/x-icon" href="data:image/png;base64,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">
+    <title>Cart | 1mg</title>
+
+<script src="https://kit.fontawesome.com/2a76efaedf.js" crossorigin="anonymous"></script>
+<style>
+    body {
+        margin: 0%;
+        font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    
+    #main {
+        width: 100%;
+        /* padding-top: 20px; */
+    }
+    
+    #navbar {
+        display: flex;
+        height: 40px;
+        margin-top: 8px;
+        /* margin-bottom: 8px; */
+        padding-bottom: 4px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    }
+    
+    #navbar>img:first-child {
+        margin-left: 20px;
+    }
+    
+    #search_bar_box {
+        display: flex;
+        margin-left: 15px;
+        width: 80%;
+    }
+    
+    #search_bar {
+        border: none;
+        background-color: rgb(236, 246, 255);
+        width: 95%;
+        font-size: 16px;
+        height: 33px;
+        position: relative;
+        width: 60%;
+    }
+    
+    #search {
+        height: 35px;
+        width: 35px;
+        border-radius: 3px;
+    }
+    
+    #search:hover {
+        cursor: pointer;
+    }
+    
+    #adiv {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 50px;
+    }
+    
+    #need_help {
+        color: black;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    /* ____________________End of navbar________________ */
+    
+    #box_1 {
+        margin-left: 100px;
+        width: 75%;
+        margin-top: 100px;
+        display: flex;
+        /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+        /* border: 1px solid rebeccapurple; */
+    }
+    
+    #apend_part {
+        width: 60%;
+        /* border: 1px solid red; */
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    }
+    /* ___________________________________________________________________________________ */
+    
+    #side_box {
+        width: 38%;
+        margin-left: 20px;
+        /* box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px; */
+        height: 900px;
+    }
+    
+    #b1 {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        padding: 10px;
+    }
+    
+    #b1>div>img {
+        width: 90px;
+        height: 25px;
+    }
+    
+    #b1>h3 {
+        margin: 2px;
+        color: rgb(3, 171, 3);
+    }
+    
+    #b1>p {
+        margin: 5px;
+    }
+    
+    #b1>h3+p {
+        font-weight: 700;
+    }
+    
+    #b1>p+p {
+        font-weight: lighter;
+        font-size: 15px;
+    }
+    
+    #overline_1 {
+        display: inline;
+    }
+    
+    #overline_2 {
+        display: inline;
+        text-decoration: line-through;
+    }
+    
+    #b1>p+div {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #know_more {
+        border: 1px solid rgb(255, 111, 97);
+        color: rgb(255, 111, 97);
+        background-color: none;
+        height: 35px;
+        width: 45%;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    
+    #add_to_cart {
+        border: none;
+        background-color: rgb(255, 111, 97);
+        color: white;
+        background-color: none;
+        height: 35px;
+        width: 45%;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    
+    #know_more,
+    #add_to_cart:hover {
+        cursor: pointer;
+    }
+    /* __________________________________________________________________________ */
+    
+    #b2 {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        display: flex;
+        padding-top: 5px;
+        justify-content: space-between;
+        margin-top: 10px;
+        height: 45px;
+        padding: 10px;
+    }
+    
+    #apply {
+        color: white;
+        background-color: rgb(41, 1, 76);
+        height: 35px;
+        width: 25%;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    
+    #apply:hover {
+        cursor: pointer;
+    }
+    
+    #coupon {
+        border: solid rgb(51, 9, 90);
+        height: 33px;
+        width: 65%;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+    /* ______________________________________________________________________________ */
+    
+    #b3 {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+    
+    #b3>div {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    #b3>div>img {
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+    }
+    
+    #b3>div>p {
+        font-size: 18px;
+    }
+    
+    #b3>div:nth-child(2) {
+        display: flex;
+    }
+    
+    #checkbox {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .pbox>p {
+        margin: 0%;
+    }
+    
+    .pbox>p:nth-child(1) {
+        margin: 5px;
+    }
+    
+    .pbox>p:nth-child(2) {
+        line-height: 22px;
+        margin: 5px;
+    }
+    
+    .pbox>p:nth-child(3) {
+        color: rgb(99, 164, 0);
+        margin: 5px;
+    }
+    /* ____________________________________________________________________ */
+    
+    #b4 {
+        height: 300px;
+        margin-top: 15px;
+        /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+        box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    }
+    /* _____________________________________________________________________ */
+    
+    #b5 {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-top: 15px;
+        padding: 5px;
+        height: 80px;
+    }
+    
+    #b5>div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+    
+    i {
+        color: red;
+    }
+    
+    #b5>div:nth-child(2) {
+        height: 30px;
+    }
+    
+    #checkout {
+        background-color: rgb(255, 111, 97);
+        color: white;
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 3px;
+        font-size: 18px;
+    }
+    
+    #checkout:hover {
+        cursor: pointer;
+    }
+    /* _______________________________________End of main page_____________________ */
+    
+    #bottom_part {
+        margin-left: 100px;
+        width: 75%;
+        display: flex;
+        height: 150px;
+    }
+    
+    #bottom_part>div {
+        padding: 10px;
+        display: flex;
+    }
+    
+    #bottom_part>div:nth-child(1) {
+        width: 60%;
+    }
+    
+    #bottom_part>div:nth-child(2) {
+        width: 38%;
+    }
+    
+    #bottom_part>div>p {
+        font-size: 11px;
+        line-height: 20px;
+    }
+    
+    #terms {
+        display: inline;
+        color: red;
+    }
+    
+    #terms>a {
+        color: red;
+        text-decoration: none;
+    }
+    
+    #terms:hover {
+        cursor: pointer;
+    }
+    #fill{
+        background-color: whitesmoke;
+        height: auto;
+    }
+</style>
+</head>
+
+<body>
+    <div id="main">
+        <div id="navbar">
+            <img src="https://www.1mg.com/images/tata_1mg_logo.svg" alt="logo">
+            <div id="search_bar_box">
+                <input type="text" placeholder="Search for Medicine and Health products" id="search_bar">
+                <img id="search" src="https://media.istockphoto.com/vectors/magnifying-glass-icon-vector-id924437708?b=1&k=20&m=924437708&s=170667a&w=0&h=fkjAvqHqCZ1Cb8tRv2xDbxAzvtp5HnJTXMFPpfxYFVs=" alt="Search">
+            </div>
+            <div id="adiv"><a href="https://www.1mg.com/help" id="need_help">Need Help?</a></div>
+        </div>
+        <!-- _________________________________________________________________________________________ -->
+        <div id="box_1">
+            <div id="apend_part">
+
+                <!-- ____________You Can append here______________ -->
+
+            </div>
+            <!-- <hr> -->
+            <div id="side_box">
+                <div id="b1">
+                    <div><img src="https://onemg.gumlet.io/image/upload/v1625657833/ekjkxafxcqqg0oinr3fu.png" alt="CarePlan"></div>
+                    <h3>You can save Extra ₹30 on this order</h3>
+                    <p>Become a member</p>
+                    <p id="overline_1">Care plan membership ₹165<span><p id="overline_2">₹549</p></span>/3months</p>
+                    <div>
+                        <input type="submit" value="Know More" id="know_more">
+                        <input type="submit" value="Add to cart" id="add_to_cart">
+                    </div>
+                </div>
+                <div id="b2">
+                    <input type="text" placeholder="Enter the Coupon Code" id="coupon">
+                    <input type="submit" value="Apply" id="apply">
+                </div>
+                <div id="b3">
+                    <div>
+                        <p>Check the helth of your vital organs</p><img src="https://www.tristate.co.uk/wp-content/uploads/2020/06/info.png" alt="alert">
+                    </div>
+                    <div>
+                        <div>
+                            <input type="checkbox" id="checkbox">
+                        </div>
+                        <div class="pbox">
+                            <p>Book Good Health Silver Package for just ₹649</p>
+                            <p>Get the tests done easily from your home. This package will help you in identifying potential disorders and deficiencies at an early stage.</p>
+                            <p>Pay later on home sample collection</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="b4">
+
+                    
+ 
+                    <!-- ____________You Can append here______________ -->
+
+                </div>
+                <div id="b5">
+                    <div>
+                        <label for="location">Your delivery location</label>
+                        <div>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <input list="locations" name="location" id="location">
+                            <datalist id="locations">
+                                <option value="New Delhi">
+                                <option value="Gurgoan">
+                                <option value="Bengaluru">
+                                <option value="Pune">
+                                <option value="Kochi">
+                                <option value="Kolkata">
+                                <option value="Chennai">
+                                <option value="Mumbai">
+                                <option value="Hydrabad">
+                            </datalist>
+                        </div>
+                    </div>
+                    <div>
+                       <a href="shipmentpage.html"> <input type="button" value="CHECKOUT" id="checkout"></a>
+                    </div>
+                </div>
+            </div>
+            <div id="fill"></div>
+        </div>
+        <hr>
+        <!-- ____________________________________________________________________________________________ -->
+        <div id="bottom_part">
+            <div>
+                <p>
+                    Tata 1mg isatechnology platform to facilitate transaction of business. The products and services are offered for sale by the sellers. The user authorizes the delivery personel to be his agent for delivery of the goods. For details read
+                    <span id="terms"><a href="https://www.1mg.com/tnc"> terms and conditions.</a></span>
+                </p>
+            </div>
+            <div>
+                <p>*1mg Cash will be credited7days after your complete order is delivered in case of Products and in case of Lab Services 1mg Cash will be credited within 24 hours from the time of generation of test report. 1mg Cash will not be credited
+                    in caseareturn request is initiated for the order.
+                    <br> **Coupon Discount value may change if the total order value changes.
+                    <br> ***Items in your cart will always reflect the most recent price as compared to the prices in their product detail page.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    
+    var c=JSON.parse(localStorage.getItem("counter"))||0;
+
+    var cartdata=JSON.parse(localStorage.getItem("cartdata"))
+
+    for(var i=0;i<cartdata.length;i++)
+    {
+        cartdata[i].QUANTITY=1;
+    }
+    // console.log(cartdata)
+
+
+    var bdiv=document.createElement("div")
+    bdiv.style.display="flex"
+    bdiv.style.width="95%"
+    bdiv.style.margin="auto"
+    bdiv.style.justifyContent="space-between"
+
+
+    var h2=document.createElement("h3")
+    h2.innerText="Total Items in the cart"
+    bdiv.append(h2)
+
+    var item=document.createElement("h3")
+    item.innerText=cartdata.length
+    bdiv.append(item)
+    localStorage.setItem("totalitem", JSON.stringify(cartdata.length))
+
+    var tp=document.createElement("div")
+    tp.style.display="flex"
+    tp.style.width="95%"
+    tp.style.margin="auto"
+    tp.style.justifyContent="space-between"
+
+    var twrite=document.createElement("h3")
+    twrite.innerText="ITEM TOTAL(MRP)"
+    tp.append(twrite)
+
+    var tprice=document.createElement("h3")
+    tp.append(tprice)
+
+    totalsum(cartdata)
+
+    function totalsum(data){
+        var sum=data.reduce(function(ac,el){
+            return ac+el.QUANTITY*el.price;
+        },0)
+
+        tprice.innerText="₹"+sum;
+        localStorage.setItem("totalprice", JSON.stringify(sum))
+        localStorage.setItem("discount", JSON.stringify(Math.floor(sum-sum*0.8)))
+    }
+    
+    var ship=document.createElement("div")
+    ship.style.display="flex"
+    ship.style.width="95%"
+    ship.style.margin="auto"
+    ship.style.justifyContent="space-between"
+
+    var s=document.createElement("h5")
+    s.innerText="Shipping Fee"
+    ship.append(s);
+
+    var hip=document.createElement("h5")
+    hip.innerText="₹0"
+    ship.append(hip);
+
+    var tbp=document.createElement("div")
+    tbp.style.display="flex"
+    tbp.style.width="95%"
+    tbp.style.margin="auto"
+    tbp.style.justifyContent="space-between"
+
+    var t=document.createElement("h2")
+    t.innerText="To be paid"
+    t.style.color="green"
+    tbp.append(t)
+
+    var bp=document.createElement("h2")
+    // bp.innerText=tprice.innerText;
+    bp.style.color="green"
+    tbp.append(bp)
+
+    totallsum(cartdata)
+
+    function totallsum(data){
+        var sum=data.reduce(function(ac,el){
+            return ac+el.QUANTITY*el.price;
+        },0)
+
+        bp.innerText="₹"+sum;
+    }
+
+
+    var hr=document.createElement("hr")
+    hr.style.width="90%"
+    var hr1=document.createElement("hr")
+    hr1.style.width="90%"
+    var hr2=document.createElement("hr")
+    hr2.style.width="90%"
+
+
+    var apply=document.querySelector("#apply")
+    apply.addEventListener("click", applying)
+
+    var coupon=document.querySelector("#coupon");
+
+    function applying(){
+        if(coupon.value!="masai30")
+        {
+            alert("Voucher Expired")
+        }
+        else
+        {
+            var sum=cartdata.reduce(function(ac,el){
+            return ac+el.QUANTITY*el.price;
+        },0)
+            bp.innerText="₹"+Math.floor(sum*0.8);
+            alert("Voucher applied Successfully")
+        }
+    }
+
+
+    document.querySelector("#b4").append(bdiv,hr,tp,hr1,ship,hr2,tbp)
+
+
+
+    displaydata(cartdata)
+
+    function displaydata(data){
+
+        document.querySelector("#apend_part").innerHTML="";
+
+        data.forEach(function(el,index){
+
+            var box=document.createElement("div");
+            // box.style.border="1px solid green"
+            box.style.width="96%"
+            // box.style.marginTop="20px"
+            box.style.margin="auto"
+
+            var hr=document.createElement("hr")
+            hr.style.width="99%"
+
+            var npdiv=document.createElement("div")
+            npdiv.style.display="flex"
+            npdiv.style.justifyContent="space-between"
+            npdiv.style.height="auto"
+            // npdiv.style.border="1px solid blue"
+
+            
+            var namediv=document.createElement("div")
+            namediv.style.width="65%"
+            npdiv.append(namediv)
+
+
+            var nam=document.createElement("h5")
+            nam.innerText=el.Name;
+            namediv.append(nam)
+
+
+            var price=document.createElement("h5")
+            price.innerText="₹"+el.price*el.QUANTITY;
+            npdiv.append(price)
+
+
+            var des=document.createElement("h6")
+            des.innerText=el.discount+" % Off"
+            // des.style.marginLeft="15px"
+            des.style.color="green";
+
+
+            var delquan=document.createElement("div");
+            delquan.style.display="flex"
+            delquan.style.justifyContent="space-between"
+            // delquan.style.border="1px solid black"
+            
+            var deldiv=document.createElement("div")
+            // deldiv.style.border="1px solid purple"
+
+            var del=document.createElement("h5")
+            del.style.cursor="pointer"
+            del.style.color="grey"
+            del.innerText="Remove"
+            del.style.height="5px"
+            del.addEventListener("click", function(){
+                deleting(el,index)
+            })
+            deldiv.append(del);
+            
+            var incdec_div=document.createElement("div")
+            // incdec_div.style.border="1px solid red"
+            incdec_div.style.display="flex"
+            incdec_div.style.width="15%"
+            incdec_div.style.height="50px"
+            incdec_div.style.justifyContent="space-evenly"
+
+
+            var dec=document.createElement("button")
+            dec.innerText="-"
+            dec.style.height="30px"
+            dec.style.width="30px"
+            dec.style.borderRadius="50%"
+            dec.style.marginTop="10px"
+            dec.style.color="red"
+            dec.style.border="1px solid red"
+            dec.style.backgroundColor="white"
+            dec.style.fontSize="25px"
+            dec.style.display="flex"
+            dec.style.justifyContent="center"
+            dec.style.alignItems="center"
+            dec.style.cursor="pointer"
+            dec.addEventListener("click", function(){
+                decreasing(el)
+            })
+            incdec_div.append(dec);
+
+            var quan=document.createElement("p")
+            quan.innerText=el.QUANTITY;
+            incdec_div.append(quan);
+
+            var inc=document.createElement("button");
+            inc.innerText="+"
+            inc.style.height="30px"
+            inc.style.width="30px"
+            inc.style.borderRadius="50%"
+            inc.style.marginTop="10px"
+            inc.style.color="white"
+            inc.style.border="1px solid red"
+            inc.style.backgroundColor="red"
+            inc.style.fontSize="25px"
+            inc.style.display="flex"
+            inc.style.justifyContent="center"
+            inc.style.alignItems="center"
+            inc.style.cursor="pointer"
+            inc.addEventListener("click", function(){
+                increasing(el)
+            })
+            incdec_div.append(inc);
+
+
+            delquan.append(deldiv,incdec_div)
+            box.append(npdiv,des,delquan)
+
+
+            document.querySelector("#apend_part").append(box,hr)
+
+        })
+    }
+
+    function deleting(ele,index){
+        cartdata.splice(index,1)
+
+        localStorage.setItem("cartdata", JSON.stringify(cartdata))
+
+        displaydata(cartdata)
+        window.location.reload();
+    }
+
+
+    function increasing(ele){
+        c++;
+
+        localStorage.setItem("counter", JSON.stringify(c))
+
+        ele.QUANTITY=Number(c);
+
+        displaydata(cartdata);
+
+        totalsum(cartdata);
+
+        totallsum(cartdata);
+    }
+
+    function decreasing(ele){
+        c--;
+
+        localStorage.setItem("counter", JSON.stringify(c))
+
+        ele.QUANTITY=Number(c);
+
+        displaydata(cartdata);
+
+        totalsum(cartdata);
+
+        totallsum(cartdata);
+    }
+
+
+    var checkbox=document.querySelector("#checkbox")
+    checkbox.addEventListener("click", chngethepara)
+
+    var pbox=document.querySelector(".pbox")
+
+
+    function chngethepara(){
+
+        if(checkbox.checked==true)
+        {
+            pbox.innerHTML=`<p>Thank you for your interest!</p>
+                            <p>Our team will call you to book a slot as per your convenience.</p>
+                            <p>Pay later on home sample collection</p>`
+        }
+        else if(checkbox.checked==false)
+        {
+            pbox.innerHTML=`<p>Book Good Health Silver Package for just ₹649</p>
+                            <p>Get the tests done easily from your home. This package will help you in identifying potential disorders and deficiencies at an early stage.</p>
+                            <p>Pay later on home sample collection</p>`
+        }
+    }
+
+
+
+</script>
