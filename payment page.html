@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Details</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/png;base64,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"
+    />
+    <style>
+         body
+        {
+            background-color: rgb(241, 241, 241);
+            font-family: "Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        #nav
+        {
+            height: 60px;
+            width: 100%;
+            margin: auto;
+            display: flex;
+            background-color: white;
+            align-items: center;
+        }
+        #nav>img:nth-child(1)
+        {
+            margin: 10px;
+            margin-left: 20px;
+        }
+        #nav>img:nth-child(2)
+        {
+            height: 100%;
+            margin-left: 40px;
+        }
+        /* container */
+        
+        #container
+        {
+            display: flex;
+            width: 70%;
+            margin: auto;
+            margin-top: 50px;
+            border: 1px solid blue;
+            position: relative;
+        }
+        /* sliding */
+
+        .sliding
+        {
+            /* position: fixed; */
+            width: 200px;
+            /* height: 500px; */
+            border-radius: 10px;
+            border-left: 5px solid rgb(109, 109, 18);
+            background-color: #fff3e3;
+        }
+        .sliding>ul
+        {
+            position: relative;
+            width: auto;
+            padding-left: 20px;            
+            padding-top: 20px;
+            list-style: none;
+        }
+        .sliding>ul>li
+        {
+            position: relative;
+            width: auto; 
+            margin-bottom: 20px;
+            height: 50px;
+            align-items: center;
+            display: flex;
+            padding-left: 10px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        #a:hover,#b:hover,#c:hover,#d:hover,#e:hover
+        {
+            background-color: white;
+        }
+        .sliding>ul>li>a
+        {
+            align-items: center;
+            display: flex;
+            text-decoration: none;
+            color: gray;
+        }
+        .sliding>ul>li>a>img
+        {
+            width: 40px;
+            height: 30px;
+            align-items: center;
+            text-align: center;
+        }
+        .sliding>ul>li>a>img+span
+        {
+            /* position: relative; */
+            margin-left: 20px;
+        }
+        /* middle */
+        #middle
+        {
+            /* margin-top: 50px; */
+            width: 460px;
+            height: 500px;
+            margin-left: 0px;
+            /* border: 1px solid red; */
+            /* display: flex; */
+            overflow: scroll;
+            background-color: white;
+            /* filter: brightness(100); */
+        }
+        /* wallet */
+
+        body
+        {
+            font-family: "Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+        }
+        .container
+        {
+            border: 1px solid #d0cece;
+            padding: 10px 20px 10px 20px;
+            width: 345px;
+            height: auto;
+            margin: auto;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+        .container2
+        {
+            display: flex;
+            /* width: 100%; */
+            height: 40px;
+            align-items: center;
+        }
+        .container2>img
+        {
+            /* height: 30px; */
+            width: 44px;
+        }
+        .container2>span
+        {
+            color: rgba(33,33,33,.87);
+            font-weight: 700;
+            margin-left: 20px;
+            font-size: 17px;
+        }
+        .container>p
+        {
+            color: green;
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        /* ----------------------------------------------- */
+
+        /* upi */
+
+
+        #submain {
+        width: 400px;
+        height: 600px;
+        padding: 8px;
+        margin-top: 20px;
+        margin-left: 20px;
+        font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+    }
+    
+    #submain>div:first-child>h3 {
+        margin: 0%;
+        font-size: 15px;
+    }
+    
+    #submain>div:nth-child(2) {
+        display: flex;
+        margin-top: 20px;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+        height: 60px;
+    }
+    
+    #submain>div:nth-child(2)>p {
+        margin: 0%;
+        margin-top: 5px;
+    }
+    
+    #imgs {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 30%;
+        height: 10px;
+        gap: 10px;
+        margin-left: 10px;
+    }
+    
+    #imgs>div>img {
+        width: 40px;
+        height: 30px;
+    }
+    /* ____________________________________________________ */
+    
+    #thirdchild {
+        margin-top: 40px;
+    }
+    
+    #thirdchild>div>h3 {
+        margin: 0%;
+        margin-bottom: 15px;
+    }
+    
+    #input>input {
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        width: 80%;
+        height: 22px;
+        margin-top: 35px;
+    }
+    
+    #input>p {
+        margin: 0%;
+        font-size: 12px;
+        color: gray;
+        margin-top: 15px;
+    }
+    
+    #fourthchild {
+        display: flex;
+        margin-top: 20px;
+    }
+    
+    #fourthchild>p {
+        font-size: 14px;
+        margin-left: 6px;
+        margin-bottom: 2px;
+    }
+    
+    #checkbox {
+        width: 30px;
+        height: 30px;
+    }
+    
+    #submitdiv {
+        margin-top: 10px;
+        height: 65px;
+    }
+    
+    #submit {
+        border: none;
+        background-color: #ff6f61;
+        border-radius: 10px;
+        width: 130px;
+        height: 65px;
+        color: white;
+        font-weight: 300;
+        font-size: 16px;
+    }
+    
+    #submit:hover {
+        cursor: pointer;
+    }
+
+
+    /* -------------------------- */
+
+    /* carddetails */
+
+
+
+    #card_box {
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+        width: 390px;
+        height: 620px;
+        padding: 8px;
+        font-family: "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+    
+    #card_box>div:first-child>h4 {
+        margin: 0%;
+        font-size: 17px;
+    }
+    
+    #card_box:div:nth-child(2) {
+        margin-top: 10px;
+    }
+    
+    #card_box>div:nth-child(2)>p {
+        font-size: 12px;
+        color: gray;
+    }
+    
+    #card {
+        height: 250px;
+        margin-top: 35px;
+    }
+    
+    #card label {
+        font-size: 13px;
+        color: gray;
+        margin-bottom: 10px;
+    }
+    
+    #card input {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border: none;
+    }
+    
+    #card_number {
+        display: block;
+        width: 100%;
+        height: 30px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        margin-top: 10px;
+    }
+    
+    #exp_sec {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    #exp_sec>div>label {
+        display: block;
+    }
+    
+    #exp_sec>div:first-child>div {
+        display: flex;
+    }
+    
+    #exp_sec>div:first-child>div>p {
+        font-size: 30px;
+        margin: 0%;
+        margin-left: 5px;
+    }
+    
+    #exp_sec>div:first-child>div>input {
+        width: 30px;
+        height: 30px;
+        margin-left: 5px;
+    }
+    
+    #two_input {
+        display: flex;
+        width: 50px;
+        display: block;
+        margin-left: 10px;
+    }
+    
+    #exp_sec>div:last-child>input {
+        height: 30px;
+    }
+    
+    #card>div:nth-child(3) {
+        margin-top: 30px;
+    }
+    
+    #card>div:nth-child(3)>input {
+        height: 30px;
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    #card_box>div:nth-child(4) {
+        margin-top: 10px;
+    }
+    
+    #card_box>div:nth-child(4)>input {
+        width: 30px;
+        height: 30px;
+        border-radius: 3px;
+    }
+    
+    #card_box>div:nth-child(5)>p {
+        margin: 0%;
+        line-height: 18px;
+        font-size: 12px;
+        color: gray;
+    }
+    
+    #card_box>div:nth-child(6) {
+        margin-top: 20px;
+        display: flex;
+        justify-content: right;
+    }
+    
+    #submit_pay {
+        border: none;
+        width: 130px;
+        height: 50px;
+        background-color: #ff6f61;
+        color: white;
+        font-weight: 300;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+    
+    #submit_pay:hover {
+        cursor: pointer;
+    }
+    
+    #last_box {
+        margin-top: 60px;
+    }
+    
+    #last_box>div>p {
+        margin: 0%;
+        font-size: 13px;
+        text-align: center;
+    }
+    
+    #last_box>div:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: auto;
+        width: 50%;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    
+    #last_box>div:nth-child(2)>div {
+        height: 30px;
+    }
+    
+    .logos {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    /* ------------------ */
+
+    /* netbanking */
+    
+
+    #container11
+        {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(3,70px);
+            margin: auto;
+            height: 450px;
+            width: 410px;
+            /* border: 1px solid red; */
+            gap: 23px;
+            padding: 20px;
+        }
+        .container22
+        {
+            border: 1px solid #d0cece;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            height: 70px;
+        }
+        .container22>img
+        {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .container22>span
+        {
+            font-weight: 700;
+            color: #333;
+        }
+
+        /* --------------- */
+
+        /* pay on delivery */
+
+
+        #container111
+        {
+            border: 1px solid #ff6f61;
+            box-shadow: 0 0 0 1px #ff6f61;
+            padding: 20px;
+            width: 400px;
+            height: 130px;
+            margin-top: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        #container222
+        {
+            display: flex;
+            /* width: 100%; */
+            height: 40px;
+            align-items: center;
+        }
+        #container222>img
+        {
+            /* height: 30px; */
+            width: 44px;
+        }
+        #container222>span
+        {
+            color: rgba(33,33,33,.87);
+            font-weight: 700;
+            margin-left: 20px;
+            font-size: 17px;
+        }
+        #container111>p
+        {
+            color: green;
+            font-size: 13px;
+            margin-top: 25px;
+        }
+        #sidetop{
+            background-color: white;
+            height: 60px;
+            margin-left:20px;
+            width: 32%;
+            display: flex;
+            padding: 10px;
+            justify-content: center;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+        #sidetop>div:nth-child(1)>img{
+            /* border: 1px solid red; */
+            height: 20px;
+            width: 20px;
+            margin-right: 10px;
+            /* margin-top: 20px; */
+        }
+        #sidetop>div:nth-child(2)>p{
+            /* border: 1px solid blue; */
+            font-size: 13.5px;
+            width: 300px;
+        }
+        #sideappend{
+            height: 300px;
+            background-color: white;
+            margin-left:30px;
+            padding:20px;
+            width: 30%;
+            position: absolute;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            right: 19px;
+            top: 98px;
+            border-radius: 2px;
+        }
+        #sidebutton{
+            color: white;
+            background-color: red;
+            border: red;
+            width: 34%;
+            right: 19px;
+            position: absolute;
+            top: 447px;
+            border-radius: 5px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 300ms ease-in;
+        }
+        #sidebutton:hover{
+            box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+            cursor: pointer;
+            transform: scale(0.9);
+            text-rendering: auto;
+        }
+        #sidebutton>p{
+            transition: all 300ms ease-out;
+        }
+        #sidebutton>p:hover{
+            transform: scale(1.5);
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+        }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <img src="https://www.1mg.com/images/tata_1mg_logo.svg" alt="logo">
+        <img src="https://i.ibb.co/BPHhcXv/payment-page-img.png" alt="payment" />
+    </div>
+    <div id="container">
+        <div class="sliding">
+            <ul>
+                <li class="list" id="a">
+                    <a href="#">
+                        <img
+                  src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530172217/marketing/vvew3rcvwfjrhknifj1z.png" />
+                        <span class="title">WALLETS</span>
+                    </a>
+                </li>
+                <li class="list" id="b">
+                    <a href="#">
+                        <img
+                  src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1581576219/marketing/p0w0w4crcgcthkom8j23.png" />
+                        <span class="title">UPI</span>
+                    </a>
+                </li>
+                <li class="list" id="c">
+                    <a href="#">
+                        <img
+                  src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530172186/marketing/p45zk16fua8dmxany3up.png" />
+                        <span class="title">CARDS</span>
+                    </a>
+                </li>
+                <li class="list" id="d">
+                    <a href="#">
+                        <img
+                  src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530172229/marketing/bsnk5fvtd4b6xffsvjdm.png" />
+                        <span class="title">NET BANKING</span>
+                    </a>
+                </li>
+                <li class="list" id="e">
+                    <a href="#">
+                        <img
+                  src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530172202/marketing/pyzcsicqsnwawi4yrpo7.png" />
+                        <span class="title">PAY ON DELIVERY</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="middle">
+
+        </div>
+        <div id="sidetop">
+           <div> <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1609235175/rwfhtgwtk8zmnbwdvfme.png" alt=""></div>
+            <div><p>Pay with Paytm Postpaid or Paytm wallet on Tata 1mg for ₹999 or more and get 4000 cashback...</p></div>
+        </div>
+        <div id="sideappend">
+
+            <!-- append here -->
+
+
+        </div>
+        <div id="sidebutton"><p>PLACE ORDER</p></div>
+    </div>
+</body>
+</html>
+<script>
+     document.querySelector("#middle").innerHTML = `<div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1532939475/marketing/jwodyz6rhzi7tardzxii.png" alt="paytmwallet">
+            <span>Paytm Postpaid | Wallet</span>
+        </div>
+        <p>Pay with Paytm Postpaid or Paytm wallet on Tata 1mg for ₹999 or more and get 4000 cashback points. Offer ends 31st May 2022.</p>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1594272078/marketing/ahvfzsqhj9nlgzexicdf.png" alt="mobikwikwallet">
+            <span>Mobikwik</span>
+        </div>
+        <p>Pay with Mobikwik and get up to ₹500 cashback on allopathy medicines. Get assured cashback of ₹100. Minimum cart value for the offer is ₹1199. Offer ends 31st May 2022.</p>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1612955877/marketing/q3zsbh4i3vgqa8ijcv0h.png" alt="Amazonpay">
+            <span>Amazon Pay</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530102837/marketing/l265joanpwafqbp165df.png" alt="Airtel">
+            <span>Airtel Payments Bank</span>
+        </div>
+        <p>Pay with Airtel Money and get 10% cashback upto ₹200 on a minimum transaction of ₹1000. Valid only for first-time users of Airtel Payments Bank till 31st May 2022.</p>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530102966/marketing/wstivvhhjrmqbrh5octm.png" alt="PhonePe">
+            <span>PhonePe</span>
+        </div>
+    </div>`
+        // _____________________________________________________________________________
+    document.querySelector("#a").addEventListener("click",clicka)
+    function clicka(){
+        document.querySelector("#middle").innerHTML=`<div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1532939475/marketing/jwodyz6rhzi7tardzxii.png" alt="paytmwallet">
+            <span>Paytm Postpaid | Wallet</span>
+        </div>
+        <p>Pay with Paytm Postpaid or Paytm wallet on Tata 1mg for ₹999 or more and get 4000 cashback points. Offer ends 31st May 2022.</p>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1594272078/marketing/ahvfzsqhj9nlgzexicdf.png" alt="mobikwikwallet">
+            <span>Mobikwik</span>
+        </div>
+        <p>Pay with Mobikwik and get up to ₹500 cashback on allopathy medicines. Get assured cashback of ₹100. Minimum cart value for the offer is ₹1199. Offer ends 31st May 2022.</p>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1612955877/marketing/q3zsbh4i3vgqa8ijcv0h.png" alt="Amazonpay">
+            <span>Amazon Pay</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530102837/marketing/l265joanpwafqbp165df.png" alt="Airtel">
+            <span>Airtel Payments Bank</span>
+        </div>
+        <p>Pay with Airtel Money and get 10% cashback upto ₹200 on a minimum transaction of ₹1000. Valid only for first-time users of Airtel Payments Bank till 31st May 2022.</p>
+    </div>
+    <div class="container">
+        <div class="container2">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530102966/marketing/wstivvhhjrmqbrh5octm.png" alt="PhonePe">
+            <span>PhonePe</span>
+        </div>
+    </div>`
+    }
+    document.querySelector("#b").addEventListener("click",clickb)
+    function clickb(){
+        document.querySelector("#middle").innerHTML=`<div id="submain">
+        <div>
+            <h3>Transfer money from your bank account using your UPI app</h3>
+        </div>
+        <div>
+            <p>We accept</p>
+            <div id="imgs">
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1581595473/marketing/pusi6g59xoxcyevsihmm.png" alt=""></div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1581595522/marketing/uwfgfsxaq3i9m9aglqsc.png" alt=""></div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1581595567/marketing/i0yoaxd0mbcc9jdzyjrq.png" alt=""></div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto,w_107,h_57/v1581508161/marketing/zhcu7wuhtxelq710o4bc.jpg" alt=""></div>
+            </div>
+        </div><hr>
+        <div id="thirdchild">
+            <div>
+                <h3>Saved UPI ID</h3>
+            </div>
+            <div>
+                <p>Pay via new UPI ID</p>
+            </div>
+            <div id="input"><input type="tel" placeholder="Exmobilenumber@upi">
+                <p>The UPI ID is in the format of name/phone number@bankname</p>
+            </div>
+        </div>
+        <div id="fourthchild">
+            <input type="checkbox" id="checkbox">
+            <p>Securely save this VPA for faster checkout next time</p>
+        </div>
+        <div id="submitdiv">
+            <input type="submit" id="submit" value="Verify & Pay">
+        </div>
+
+    </div>`
+    }
+    document.querySelector("#c").addEventListener("click",clickc)
+    function clickc(){
+        document.querySelector("#middle").innerHTML=`<div id="card_box">
+        <div>
+            <h4>Credit & Debit Cards</h4>
+        </div>
+        <div>
+            <p>Add New Card For Payment</p>
+        </div>
+        <div id="card">
+            <div>
+                <label for="card_number">Card Number</label>
+                <input type="tel" name="card_number" id="card_number" placeholder="XXXX XXXX XXXX XXXX">
+            </div>
+            <div id="exp_sec">
+                <div>
+                    <label for="mon">Expiry Date (MM/YY)</label>
+                    <div id="two_input">
+                        <input type="tel" id="mon" placeholder="MM">
+                        <p>/</p>
+                        <input type="tel" id="year" placeholder="YY">
+                    </div>
+                </div>
+                <div>
+                    <label for="cvv">Security Code</label>
+                    <input type="tel" id="cvv" placeholder="CVV">
+                </div>
+            </div>
+            <div>
+                <input type="text" id="user_name" placeholder="Name on the card">
+            </div>
+        </div>
+        <div>
+            <input type="checkbox" id="check">
+        </div>
+        <div>
+            <p>Your card details will be saved securely for future transactions, based on the industry standards.</p>
+        </div>
+        <div>
+            <input type="submit" id="submit_pay" value="MAKE PAYMENT">
+        </div>
+        <div id="last_box">
+            <div>
+                <p>We support domestic credit and debit cards of following brands
+                </p>
+            </div>
+            <div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530098811/marketing/szfylmvspyj5ccvhesnp.png" class="logos" alt=""></div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1532957968/marketing/j9kc0uquxwrcbyoeomfw.png" class="logos" alt=""></div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530098792/marketing/vujtyvkwxchd16egv0wt.png" class="logos" alt=""></div>
+                <div><img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530098898/marketing/rv6lj5fubobesvsomlzr.png" class="logos" alt=""></div>
+            </div>
+        </div>
+    </div>`
+    }
+    document.querySelector("#d").addEventListener("click",clickd)
+    function clickd(){
+        document.querySelector("#middle").innerHTML=`<div id="container11">
+        <div class="container22">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1529400450/marketing/tp4al0qn9nery25pwcjh.png" alt="">
+            <span>ICICI</span>
+        </div>
+        <div class="container22">
+            <img src="	https://res.cloudinary.com/du8msdgbj/image/upload/v1529400478/marketing/k5ezmynfhvzorhfcbzks.png" alt="">
+            <span>HDFC</span>
+        </div>
+        <div class="container22">
+            <img src="	https://res.cloudinary.com/du8msdgbj/image/upload/v1529400496/marketing/p1pmddrmfgus2qiuznm1.png" alt="">
+            <span>AXIS</span>
+        </div>
+        <div class="container22">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1529400513/marketing/e07ooqn2k3czd3m6tmfk.png" alt="">
+            <span>KOTAK</span>
+        </div>
+        <div class="container22">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/v1529400415/marketing/xw86fht2ekdg7rx4fbqq.png" alt="">
+            <span>SBI</span>
+        </div>
+    </div>`
+    }
+    document.querySelector("#e").addEventListener("click",clicke)
+    function clicke(){
+        document.querySelector("#middle").innerHTML=`<div id="container111">
+        <div id="container222">
+            <img src="https://res.cloudinary.com/du8msdgbj/image/upload/q_auto,f_auto/v1530103046/marketing/dwuduzecduhobnrvro1z.png" alt="COD">
+            <span>CASH ON DELIVERY</span>
+        </div>
+        <p>Wait! You can save more. Pay online for this order & get additional 5% 1mgCash (up to ₹25).</p>
+    </div>`
+    }
+
+
+
+
+    var totalitem=JSON.parse(localStorage.getItem("totalitem"))
+    var totalprice=JSON.parse(localStorage.getItem("totalprice"))
+    var discount=JSON.parse(localStorage.getItem("discount"))
+
+
+
+
+    var div=document.createElement("div")
+    div.style.display="flex"
+    div.style.justifyContent="space-between"
+
+
+    var hh5=document.createElement("h5")
+    hh5.style.color="grey";
+    hh5.innerText="Total Items"
+    div.append(hh5)
+
+    var h5=document.createElement("h5")
+    h5.style.color="grey";
+    h5.innerText=totalitem;
+    div.append(h5)
+
+
+
+    var div1=document.createElement("div")
+    div1.style.display="flex"
+    
+    var h51=document.createElement("h5")
+    h51.style.color="grey";
+    h51.innerText="ITEMS TOTAL(MRP)"
+    div1.append(h51)
+    div1.style.justifyContent="space-between"
+
+
+    var h512=document.createElement("h5")
+    h512.style.color="grey";
+    h512.innerText="₹"+totalprice;
+    div1.append(h512)
+
+
+    var div2=document.createElement("div")
+    div2.style.display="flex"
+    
+    var h52=document.createElement("h5")
+    h52.style.color="grey";
+    h52.innerText="Discount"
+    div2.append(h52)
+
+    var h522=document.createElement("h5")
+    h522.style.color="grey";
+    h522.innerText="-"+"₹"+discount;
+    div2.append(h522)
+    div2.style.justifyContent="space-between"
+
+
+    var div3=document.createElement("div")
+    div3.style.display="flex"
+    div3.style.justifyContent="space-between"
+    
+    var h53=document.createElement("h5")
+    h53.style.color="green";
+    h53.innerText="To be paid"
+    div3.append(h53)
+
+    var h532=document.createElement("h5")
+    h532.style.color="green";
+    h532.innerText="₹"+(Number(totalprice)-Number(discount))
+    div3.append(h532)
+
+    var hr=document.createElement("hr")
+    hr.style.width="90%"
+
+    var hr1=document.createElement("hr")
+    hr1.style.width="90%"
+
+    var hr2=document.createElement("hr")
+    hr2.style.width="90%"
+
+    document.querySelector("#sideappend").append(div,hr,div1,hr1,div2,hr2,div3)
+
+
+    document.querySelector("#sidebutton").addEventListener("click",cgnhe)
+
+    function cgnhe(){
+        window.location.href="otp2.html"
+    }
+
+
+
+
+</script>
